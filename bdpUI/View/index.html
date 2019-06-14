@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>必得拍管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="../Content/css/main.css">
+    <link rel="stylesheet" href="../Content/css/bootstrap-table/bootstrap-datetimepicker.min.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="app sidebar-mini rtl">
+    <header class="app-header">
+        <a class="app-header__logo" style="font-family:STHupo" href="index.html">必得资产</a>
+        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav">
+            <li class="app-search">
+                <input class="app-search__input" type="search" placeholder="Search">
+                <button class="app-search__button"><i class="fa fa-search"></i></button>
+            </li>
+            <!--Notification Menu-->
+            <li class="dropdown">
+                <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i></a>
+                <ul class="app-notification dropdown-menu dropdown-menu-right">
+                    <li class="app-notification__title"></li>
+                    <div class="app-notification__content">
+                        <li>
+                            <a class="app-notification__item" href="javascript:;">
+                                <span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                                <div>
+                                    <p class="app-notification__message"></p>
+                                    <p class="app-notification__meta">2 min ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="app-notification__item" href="javascript:;">
+                                <span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
+                                <div>
+                                    <p class="app-notification__message">Mail server not working</p>
+                                    <p class="app-notification__meta">5 min ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="app-notification__item" href="javascript:;">
+                                <span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                                <div>
+                                    <p class="app-notification__message">Transaction complete</p>
+                                    <p class="app-notification__meta">2 days ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <div class="app-notification__content">
+                            <li>
+                                <a class="app-notification__item" href="javascript:;">
+                                    <span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                                    <div>
+                                        <p class="app-notification__message">Lisa sent you a mail</p>
+                                        <p class="app-notification__meta">2 min ago</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="app-notification__item" href="javascript:;">
+                                    <span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
+                                    <div>
+                                        <p class="app-notification__message">Mail server not working</p>
+                                        <p class="app-notification__meta">5 min ago</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="app-notification__item" href="javascript:;">
+                                    <span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                                    <div>
+                                        <p class="app-notification__message">Transaction complete</p>
+                                        <p class="app-notification__meta">2 days ago</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
+                </ul>
+            </li>
+            <!-- User Menu-->
+            <li class="dropdown">
+                <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+                <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                    <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                    <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                    <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user">
+            <img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+            <div>
+                <p class="app-sidebar__user-name">John Doe</p>
+                <p class="app-sidebar__user-designation">Frontend Developer</p>
+            </div>
+        </div>
+        <ul class="app-menu">
+            <!--左侧菜单start-->
+            <!--<li><a class="app-menu__item active" href="index.html"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>-->
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">小型资产</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>小型资产类1</a></li>
+                    <li><a class="treeview-item" href="#" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i>小型资产类2</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>小型资产类3</a></li>
+                </ul>
+            </li>
+            <!--<li><a class="app-menu__item" href="charts.html"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Charts</span></a></li>-->
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">大中型资产</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>落地执行</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>资产交易</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>资产处置</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>资产变性</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>资产通道</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>资产重组</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">土地拍卖</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>出让土地展示</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>土地拍卖</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">拍卖会</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖会</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>按类别拍卖</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖日历</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">拍卖日历</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖日历</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>预拍卖</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖中</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖推荐</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>3日内拍卖</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">融资理财</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="../View/Spxx/spcdlist.html" target="myMain"><i class="icon fa fa-circle-o"></i>理财产品</a></li>
+                    <li><a class="treeview-item" href="../View/Spxx/spcdhp.html" target="myMain"><i class="icon fa fa-circle-o"></i>保理产品</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>供应链融资</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">拍卖师管理</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖师注册</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖师商品管理</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍卖师排名</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">鉴定评估</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>鉴定申请</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>鉴定评估</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">我的关注</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>关注的拍品</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">个人资料</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li class="treeview">
+                        <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">我的设置</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>我的账户</a></li>
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>我的订单</a></li>
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>信息</a></li>
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>运送中的物品</a></li>
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>推送通知</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>钱包</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>卖家信息</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>保证金</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>分期</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>置换</a></li>
+                    <li class="treeview">
+                        <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">系统</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>客服中心</a></li>
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>关于我们</a></li>
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>使用条款与协议</a></li>
+                            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>隐私政策</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">首页</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>拍品推荐</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>特色拍卖会</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>稀奇物品</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>受欢迎的拍品</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>个人设置</a></li>
+                    <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>当前我出价</a></li>
+                </ul>
+            </li>
+        </ul><!--左侧菜单end-->
+    </aside>
+    <iframe src="main.html" name="myMain" width="100%" height="1800px" frameborder="0"></iframe>
+
+    <script src="../Content/js/jquery-3.2.1.min.js"></script>
+    <script src="../Content/js/popper.min.js"></script>
+    <script src="../Content/js/bootstrap.min.js"></script>
+    <script src="../Content/js/main.js"></script>
+</body>
+</html>

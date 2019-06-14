@@ -1,0 +1,6 @@
+记录时间：2019-05-29 14:37:55,134 
+线程ID:[9] 
+日志级别：  ERROR 
+类：bdp.Web.Api.Controllers.LoginController property: [(null)] - 
+日志描述：用户登录信息出错了！错误信息：运算符“!=”无法应用于“string”和“Newtonsoft.Json.Linq.JValue”类型的操作数
+ 

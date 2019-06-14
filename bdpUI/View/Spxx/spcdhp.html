@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>必得拍管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="../../Content/css/main.css">
+    <link rel="stylesheet" href="../../Content/css/bootstrap-table/bootstrap-datetimepicker.min.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class="fa fa-edit"></i>商业承兑汇票</h1>
+                <!--<p>Bootstrap default form components</p>-->
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item"><a href="#">Form Components</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <form id="f-Spxx">
+                        <div class="row">
+                            <div class="col-lg-6" style="max-width:33.33%">
+                                <div class="form-group">
+                                    <label for="exampleSelect2">商品名称：</label>
+                                    <select class="form-control" id="spName" name="spName">
+                                        <option value="承兑汇票">承兑汇票</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">票据金额：</label>
+                                    <input class="form-control" style="border-color:red;" id="spPJJE" name="spPJJE" type="text" placeholder="0.00"><!--<small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small>-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">出票人全称：</label>
+                                    <input class="form-control" id="spCPRQC" name="spCPRQC" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">汇票号：</label>
+                                    <input class="form-control" id="spHPH" name="spHPH" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleSelect1">出票日期：</label>
+                                    <input type="text" name="spCPRQ" id="begintime" class="form-control">
+                                    <i class="form-group__bar"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleSelect2">汇票到期日：</label>
+                                    <input type="text" name="spHPDQR" id="endtime" class="form-control">
+                                    <i class="form-group__bar"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">承兑人全称：</label>
+                                    <input class="form-control" id="spCDRQC" name="spCDRQC" type="text">
+                                </div>
+                                <!--<div class="form-group">
+                                    <label for="exampleTextarea"  multiple="">Example textarea</label>
+                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                </div>
+                                    -->
+                                <div class="form-group">
+                                    <label for="exampleSelect2">是否可转让：</label>
+                                    <select class="form-control" id="IsKZR" name="IsKZR">
+                                        <option value="1">是</option>
+                                        <option value="2">否</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleSelect2">票据状态：</label>
+                                    <select class="form-control" id="spPJZT" name="spPJZT">
+                                        <!--<option value="1">背书已签收</option>
+                                        <option value="2">未背书</option>-->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleSelect2">付款方式：</label>
+                                    <select class="form-control" id="spFKFS" name="spFKFS">
+                                        <!--<option value="1">微信</option>
+                                        <option value="2">支付宝</option>
+                                        <option value="3">银行</option>-->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">起拍价：</label>
+                                    <input class="form-control" id="spQPJ" name="spQPJ" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleSelect2">是否有保留价：</label>
+                                    <select class="form-control" id="IsBLJ" name="IsBLJ">
+                                        <option value="1">是</option>
+                                        <option value="2">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 offset-lg-1" style="margin-top:0">
+                                <div class="form-group">
+                                    <label for="exampleSelect2">拍卖方式：</label>
+                                    <select class="form-control" id="spPMFS" name="spPMFS">
+                                        <!--<option value="1">荷兰式</option>
+                                        <option value="2">英格兰式</option>
+                                        <option value="3">一口价</option>-->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">加价幅度：</label>
+                                    <input class="form-control" id="spJJFD" name="spJJFD" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleSelect2">拍卖开始时间：</label>
+                                    <input type="text" name="spPMKSSJ" id="begintime1" class="form-control">
+                                    <i class="form-group__bar"></i>
+                                </div>  <div class="form-group">
+                                    <label for="exampleSelect2">拍卖结束时间：</label>
+                                    <input type="text" name="spPMJSSJ" id="endtime1" class="form-control">
+                                    <i class="form-group__bar"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">收票人全称：</label>
+                                    <input class="form-control" id="spSPRQC" name="spSPRQC" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">出票人承诺：</label>
+                                    <select class="form-control" id="spCPRCN" name="spCPRCN">
+                                        <!--<option value="1">到期无条件付款</option>
+                                        <option value="2">本票不予承兑</option>-->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">承兑人承诺：</label>
+                                    <select class="form-control" id="spCDRCN" name="spCDRCN">
+                                        <!--<option value="1">到期无条件付款</option>
+                                        <option value="2">本票不予承兑</option>-->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">保证金要求：</label>
+                                    <input class="form-control" id="spBZJYQ" name="spBZJYQ" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">商品描述：</label>
+                                    <input class="form-control" id="spMS" name="spMS" type="text">
+                                </div>
+                                <!--<div class="form-group">
+                                    <label for="exampleInputPassword1">出价历史：</label>
+                                    <input class="form-control" id="exampleInputPassword2" type="password">
+                                </div>-->
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">
+                                        票据概要：
+                                    </label>
+                                    <input class="form-control" id="spPJGY" name="spPJGY" type="text" placeholder="承兑人名称+票据金额"><!--<small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small>-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">上传汇票照片：</label>
+                                    <input class="form-control-file" id="fileSchp" name="file" type="file" aria-describedby="fileHelp">
+                                    <input type="hidden" id="hidSchp" name="spUrl" />
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="tile-footer">
+                        <button class="btn btn-primary" id="btnAdd" type="button">确定</button>
+                        <button class="btn btn-primary" type="button">清空</button>
+                        <button class="btn btn-primary" type="button">返回</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../Content/js/jquery-3.2.1.min.js"></script>
+    <script src="../../Content/js/jquery-validate/jquery.validate.min.js"></script>
+    <script src="../../Content/js/commonJs.js"></script>
+    <script src="../../Content/js/app/web/spxx/spxxadd.js" type="text/javascript"></script>
+</body>
+</html>
